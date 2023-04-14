@@ -44,12 +44,9 @@ def generate_sequence_4(surname, N_sequence):
     return original_sequence_4
 
 # 5
-def generate_sequence_5(N_sequence):
-    alphabet = ['ц', 'е', '5', '2', '9', 'а']
-    my_info = ['це', '529а']
-    prob = 0.2
-    sequence = [random.choices(alphabet, weights=[prob if char in my_info else 1 - prob for char in alphabet])[0] for _
-                in range(N_sequence)]
+def generate_sequence_5():
+    alphabet = ['ц', 'е', '5', '2', '9']
+    sequence = alphabet * 20
     random.shuffle(sequence)
     original_sequence_5 = ''.join(sequence)
     return original_sequence_5
@@ -122,7 +119,7 @@ def main():
     N_sequence = 100
     surname = "Цехмистро"
     original_sequences = [generate_sequence_1(N1, N_sequence),generate_sequence_2(surname, N_sequence),generate_sequence_3(surname, N_sequence),
-                          generate_sequence_4(surname, N_sequence), generate_sequence_5(N_sequence),
+                          generate_sequence_4(surname, N_sequence), generate_sequence_5(),
                           generate_sequence_6(),generate_sequence_7(N_sequence),generate_sequence_8(N_sequence)]
     results = []
     for sequence in original_sequences:
